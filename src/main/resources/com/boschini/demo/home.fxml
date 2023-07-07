@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.CoinToHouseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.HomeController">
    <children>
       <Label layoutX="207.0" layoutY="29.0" text="1 coin to house" textAlignment="CENTER" />
       <Label fx:id="labelName" layoutX="235.0" layoutY="72.0" text="Name:" textAlignment="CENTER" />
       <Label layoutX="228.0" layoutY="155.0" text="Difficulty:" textAlignment="CENTER" />
-      <TextField fx:id="username" layoutX="178.0" layoutY="111.0" promptText="Giacomo" />
+      <TextField fx:id="username" layoutX="178.0" layoutY="102.0" promptText="Giacomo" />
       <ChoiceBox fx:id="difficulty" layoutX="177.0" layoutY="192.0" prefWidth="150.0" />
-      <Button fx:id="start" layoutX="227.0" layoutY="263.0" mnemonicParsing="false" onAction="#onClickStart" text="Button" />
+      <Button fx:id="start" layoutX="227.0" layoutY="263.0" mnemonicParsing="false" onAction="#onClickStart" styleClass="btn1" text="play" />
+      <Label fx:id="erroreNome" layoutX="350.0" layoutY="106.0" text="campo obbligatorio" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

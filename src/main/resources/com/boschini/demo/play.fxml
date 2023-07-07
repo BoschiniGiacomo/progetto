@@ -8,19 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.PlayController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Options">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#restart" text="New game" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -34,9 +28,39 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="confermation" layoutX="192.0" layoutY="174.0" mnemonicParsing="false" text="Confermation" />
-            <Label fx:id="offerta" layoutX="223.0" layoutY="102.0" text="pane" />
+            <Button fx:id="confermation" layoutX="81.0" layoutY="133.0" mnemonicParsing="false" onAction="#update" text="Confermation" />
+            <Label fx:id="offerta" layoutX="112.0" layoutY="97.0" text="pane" />
+            <Label layoutX="84.0" layoutY="52.0" text="exchange offert" />
+            <Label fx:id="labelcountNetxLevel" layoutX="218.0" layoutY="22.0" text="0" />
          </children>
       </AnchorPane>
    </center>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="skipTrade" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#onClikSkip" prefHeight="26.0" prefWidth="122.0" text="Skip trade" />
+            <Button fx:id="buttonConvert" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#onClikConverterToCoin" prefHeight="26.0" prefWidth="122.0" text="converter to money" />
+            <Button layoutX="14.0" layoutY="97.0" mnemonicParsing="false" onAction="#onClikConverter50" prefHeight="26.0" prefWidth="122.0" text="converter 50%" />
+            <Label layoutX="23.0" layoutY="168.0" text="money:" />
+            <Label fx:id="coinValue" layoutX="39.0" layoutY="207.0" text="0" />
+            <Label layoutX="158.0" layoutY="6.0" text="Cost:" />
+            <Label layoutX="167.0" layoutY="26.0" text="3$" />
+            <Label layoutX="167.0" layoutY="62.0" text="2$" />
+            <Label layoutX="94.0" layoutY="168.0" text="personal object:" />
+            <Label fx:id="personalObject" layoutX="124.0" layoutY="207.0" text="Coin" />
+            <Label layoutX="167.0" layoutY="101.0" text="0$" />
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelUser" layoutX="23.0" layoutY="8.0" text="User:" textFill="WHITE" />
+            <Label fx:id="labelDifficulty" layoutX="123.0" layoutY="8.0" text="Difficulty:" textFill="WHITE" />
+            <Label layoutX="340.0" layoutY="8.0" text="Record:" textFill="WHITE" />
+            <Label fx:id="labelRecord" layoutX="389.0" layoutY="7.0" text="Coin" textFill="WHITE" />
+            <Label fx:id="labelLevel" layoutX="221.0" layoutY="8.0" text="Level:" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>
