@@ -70,6 +70,7 @@ static  String modalita = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università 
             alert.setTitle("Username");
             alert.setHeaderText("Max 16 characters");
             alert.showAndWait();
+            username.setText(username.getText(0,16));
         }
         else {
             User utente = new User();

@@ -124,11 +124,11 @@
    <bottom>
       <AnchorPane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelUser" layoutX="8.0" layoutY="8.0" text="User:" textFill="WHITE">
+            <Label fx:id="labelUser" layoutX="4.0" layoutY="8.0" text="User:" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Italic" size="12.0" />
                </font></Label>
-            <Label fx:id="labelDifficulty" layoutX="143.0" layoutY="8.0" text="Difficulty:" textFill="WHITE">
+            <Label fx:id="labelDifficulty" layoutX="173.0" layoutY="8.0" text="Diff:" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Italic" size="12.0" />
                </font></Label>
@@ -140,11 +140,11 @@
                <font>
                   <Font name="Comic Sans MS Italic" size="12.0" />
                </font></Label>
-            <Label fx:id="labelLevel" layoutX="244.0" layoutY="8.0" text="Level:" textFill="WHITE">
+            <Label fx:id="labelLevel" layoutX="259.0" layoutY="8.0" text="Lvl:" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Italic" size="12.0" />
                </font></Label>
-            <Label fx:id="labelBestScore" layoutX="305.0" layoutY="8.0" text="Best Score:" textFill="WHITE">
+            <Label fx:id="labelBestScore" layoutX="308.0" layoutY="8.0" text="Best Score:" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Italic" size="12.0" />
                </font>

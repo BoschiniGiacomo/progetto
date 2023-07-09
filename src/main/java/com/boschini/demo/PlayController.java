@@ -191,14 +191,14 @@ public class PlayController {
         utente.setOggetto(new Thing(1, "coin"));
         utente.setCoin(0);
         coef = setCoef(utente.getMode());
-        labelDifficulty.setText("Difficulty: " + modalitaToString(utente.getMode()));
+        labelDifficulty.setText("Diff: " + modalitaToString(utente.getMode()));
         labelUser.setText("User: " + utente.getUsername());
         coinValue.setText(String.valueOf(utente.getCoin()));
 
         labelBestScore.setText("Best Score: "+utente.getScore());
 
         next();
-        labelLevel.setText("Level: " + 0);
+        labelLevel.setText("Lvl: " + 0);
     }
 
     public int setCoef(int d) {
@@ -238,7 +238,7 @@ public class PlayController {
         personalObject.setText(utente.getOggetto().getNameObject());
 
         offert();
-        labelLevel.setText("Level: " + liv);
+        labelLevel.setText("Lvl: " + liv);
         labelcountNetxLevel.setText("Next level in " + (coef - stepLiv) + " correct trade");
         if(labelOfferta.getText().equals("casa")){
             labelcountNetxLevel.setVisible(false);
@@ -414,7 +414,7 @@ public class PlayController {
     void onClikEasy(ActionEvent event) {
         utente.setMode(1);
         writeModOnFile(utente.getMode());
-        labelDifficulty.setText("Difficulty: " + modalitaToString(utente.getMode()));
+        labelDifficulty.setText("Diff: " + modalitaToString(utente.getMode()));
         costimodalita(utente.getMode());
         if ((utente.getCoin()) < costSkip) {
             skipTrade.setDisable(true);
@@ -435,7 +435,7 @@ public class PlayController {
     void onClikMedium(ActionEvent event) {
         utente.setMode(2);
         writeModOnFile(utente.getMode());
-        labelDifficulty.setText("Difficulty: " + modalitaToString(utente.getMode()));
+        labelDifficulty.setText("Diff: " + modalitaToString(utente.getMode()));
         costimodalita(utente.getMode());
         if ((utente.getCoin()) < costSkip) {
             skipTrade.setDisable(true);
@@ -458,7 +458,7 @@ public class PlayController {
 
         utente.setMode(3);
         writeModOnFile(utente.getMode());
-        labelDifficulty.setText("Difficulty: " + modalitaToString(utente.getMode()));
+        labelDifficulty.setText("Diff: " + modalitaToString(utente.getMode()));
         costimodalita(utente.getMode());
         if ((utente.getCoin()) < costSkip) {
             skipTrade.setDisable(true);
