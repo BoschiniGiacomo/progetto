@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -28,20 +25,20 @@ public class HomeController {
     @FXML
     private TextField username;
 
-    @FXML
-    private Label erroreNome;
 static  String nomeUtente = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università Ingegnieria " +
         "informatica\\2_anno\\programmazioneOggetti\\demo\\src\\main\\java\\com\\boschini\\demo/user.txt";
 static  String modalita = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università Ingegnieria " +
         "informatica\\2_anno\\programmazioneOggetti\\demo\\src\\main\\java\\com\\boschini\\demo/mode.txt";
+    static  String score = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università Ingegnieria " +
+            "informatica\\2_anno\\programmazioneOggetti\\demo\\src\\main\\java\\com\\boschini\\demo/score.txt";
     @FXML
     public void initialize() {
         difficulty.getItems().removeAll(difficulty.getItems());
         difficulty.getItems().addAll("easy", "medium", "hard");
         difficulty.getSelectionModel().select("easy");
-        erroreNome.setVisible(false);
         newFile(nomeUtente);
         newFile(modalita);
+        newFile(score);
     }
     // Listato 1. Creazione di un file vuoto
     public static void newFile(String path) {
@@ -63,10 +60,18 @@ static  String modalita = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università 
     @FXML
     void onClickStart(ActionEvent event) throws IOException {
         if(username.getText().isEmpty()){
-            erroreNome.setVisible(true);
+            Alert alert= new Alert((Alert.AlertType.ERROR));
+            alert.setTitle("Username");
+            alert.setHeaderText("required field");
+            alert.showAndWait();
+        }
+        else if(username.getText().length()>16){
+            Alert alert= new Alert((Alert.AlertType.ERROR));
+            alert.setTitle("Username");
+            alert.setHeaderText("Max 16 characters");
+            alert.showAndWait();
         }
         else {
-            erroreNome.setVisible(false);
             User utente = new User();
             utente.setUsername(username.getText());
 
@@ -108,6 +113,17 @@ static  String modalita = "C:\\Users\\Boschini\\Documents\\Giacomo\\Università 
                 e2.printStackTrace();
             }
 
+
+            try {
+                File f3 = new File(score);
+                FileWriter fw3 = new FileWriter(f3);
+                fw3.write("-");
+                fw3.flush();
+                fw3.close();
+            }
+            catch(IOException e2) {
+                e2.printStackTrace();
+            }
 
 
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("play.fxml")));

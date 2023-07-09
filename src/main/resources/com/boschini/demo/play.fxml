@@ -7,19 +7,29 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.PlayController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="289.0" minWidth="560.0" prefHeight="289.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.PlayController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Options">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#restart" text="New game" />
+                  <Menu mnemonicParsing="false" text="Change difficulty">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onClikEasy" text="Easy" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClikMedium" text="Medium" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClikHard" text="Hard" />
+                    </items>
+                  </Menu>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#onClikInfoShop" text="Shop" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClikInfoTrade" text="Trade" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClikInfoLevel" text="Level" />
             </items>
           </Menu>
         </menus>
@@ -28,38 +38,117 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="confermation" layoutX="81.0" layoutY="133.0" mnemonicParsing="false" onAction="#update" text="Confermation" />
-            <Label fx:id="offerta" layoutX="112.0" layoutY="97.0" text="pane" />
-            <Label layoutX="84.0" layoutY="52.0" text="exchange offert" />
-            <Label fx:id="labelcountNetxLevel" layoutX="218.0" layoutY="22.0" text="0" />
+            <Button fx:id="ButtoConfermation" layoutX="119.0" layoutY="134.0" mnemonicParsing="false" onAction="#update" prefHeight="26.0" prefWidth="90.0" text="trade">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Label fx:id="labelOfferta" alignment="CENTER" layoutX="126.0" layoutY="93.0" style="-fx-alignment: center; -fx-text-alignment: center;" text="pane" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font></Label>
+            <Label fx:id="labelExchange" layoutX="126.0" layoutY="68.0" text="exchange offert" />
+            <Label fx:id="labelcountNetxLevel" layoutX="93.0" layoutY="15.0" prefHeight="18.0" prefWidth="154.0" style="-fx-alignment: center;" text="Next level in 0 corret trade" />
+            <Label fx:id="labelScore" layoutX="25.0" layoutY="89.0" prefHeight="18.0" style="-fx-alignment: center;" text="Score:">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelWin" layoutX="8.0" layoutY="35.0" prefHeight="34.0" prefWidth="99.0" style="-fx-alignment: center;" text="WIN">
+               <font>
+                  <Font name="Comic Sans MS" size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonWin" layoutX="19.0" layoutY="136.0" mnemonicParsing="false" onAction="#onClikRestart" prefHeight="26.0" prefWidth="69.0" text="Restart">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="234.0" prefWidth="217.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="skipTrade" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#onClikSkip" prefHeight="26.0" prefWidth="122.0" text="Skip trade" />
-            <Button fx:id="buttonConvert" layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#onClikConverterToCoin" prefHeight="26.0" prefWidth="122.0" text="converter to money" />
-            <Button layoutX="14.0" layoutY="97.0" mnemonicParsing="false" onAction="#onClikConverter50" prefHeight="26.0" prefWidth="122.0" text="converter 50%" />
-            <Label layoutX="23.0" layoutY="168.0" text="money:" />
-            <Label fx:id="coinValue" layoutX="39.0" layoutY="207.0" text="0" />
-            <Label layoutX="158.0" layoutY="6.0" text="Cost:" />
-            <Label layoutX="167.0" layoutY="26.0" text="3$" />
-            <Label layoutX="167.0" layoutY="62.0" text="2$" />
-            <Label layoutX="94.0" layoutY="168.0" text="personal object:" />
-            <Label fx:id="personalObject" layoutX="124.0" layoutY="207.0" text="Coin" />
-            <Label layoutX="167.0" layoutY="101.0" text="0$" />
+            <Button fx:id="skipTrade" layoutX="12.0" layoutY="41.0" mnemonicParsing="false" onAction="#onClikSkip" prefHeight="26.0" prefWidth="128.0" text="Skip trade">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="buttonConvert" layoutX="12.0" layoutY="77.0" mnemonicParsing="false" onAction="#onClikConverterToCoin" prefHeight="26.0" prefWidth="128.0" text="converter to money">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Button fx:id="buttonConvert50" layoutX="12.0" layoutY="116.0" mnemonicParsing="false" onAction="#onClikConverter50" prefHeight="26.0" prefWidth="128.0" text="converter 50%">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Button>
+            <Label layoutX="23.0" layoutY="168.0" text="money:">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="coinValue" layoutX="39.0" layoutY="197.0" text="0">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelCost" layoutX="158.0" layoutY="25.0" text="Cost">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelCostSkip" layoutX="161.0" layoutY="45.0" text="3$">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelCostConvert" layoutX="161.0" layoutY="81.0" text="2$">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label layoutX="94.0" layoutY="168.0" text="personal object:">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="personalObject" alignment="CENTER" layoutX="94.0" layoutY="197.0" text="Coin" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelCostConvert50" layoutX="161.0" layoutY="120.0" text="0$">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="labelShop" layoutX="81.0" layoutY="4.0" text="Shop">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </left>
    <bottom>
       <AnchorPane prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="labelUser" layoutX="23.0" layoutY="8.0" text="User:" textFill="WHITE" />
-            <Label fx:id="labelDifficulty" layoutX="123.0" layoutY="8.0" text="Difficulty:" textFill="WHITE" />
-            <Label layoutX="340.0" layoutY="8.0" text="Record:" textFill="WHITE" />
-            <Label fx:id="labelRecord" layoutX="389.0" layoutY="7.0" text="Coin" textFill="WHITE" />
-            <Label fx:id="labelLevel" layoutX="221.0" layoutY="8.0" text="Level:" textFill="WHITE" />
+            <Label fx:id="labelUser" layoutX="8.0" layoutY="8.0" text="User:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelDifficulty" layoutX="143.0" layoutY="8.0" text="Difficulty:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="397.0" layoutY="8.0" text="Record:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelRecord" layoutX="441.0" layoutY="8.0" text="Coin" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelLevel" layoutX="244.0" layoutY="8.0" text="Level:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font></Label>
+            <Label fx:id="labelBestScore" layoutX="305.0" layoutY="8.0" text="Best Score:" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </bottom>

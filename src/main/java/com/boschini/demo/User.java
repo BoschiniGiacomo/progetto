@@ -8,12 +8,14 @@ public class User {
     int coin;
 
     Thing oggetto;
+    int score;
 
     public User() {
         this.mode = 0;
         this.username = "-";
         this.coin =0;
-        this.oggetto= new Thing(1,1,"coin");
+        this.score=0;
+        this.oggetto= new Thing(1,"coin");
     }
 
     public int getMode() {
@@ -48,8 +50,16 @@ public class User {
         this.oggetto = oggetto;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "mode=" + mode + ", username='" + username + '\'' + ", coin=" + coin + ", oggetto=" + oggetto + '}';
+        return "User{" + "mode=" + mode + ", username='" + username + '\'' + ", coin=" + coin + ", oggetto=" + oggetto + ", score=" + score + '}';
     }
 }

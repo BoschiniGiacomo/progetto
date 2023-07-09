@@ -4,16 +4,32 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.HomeController">
+<AnchorPane maxHeight="327.0" maxWidth="505.0" minHeight="327.0" minWidth="505.0" prefHeight="327.0" prefWidth="505.0" style="-fx-min-width: 505; -fx-min-height: 327;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.boschini.demo.HomeController">
    <children>
-      <Label layoutX="207.0" layoutY="29.0" text="1 coin to house" textAlignment="CENTER" />
-      <Label fx:id="labelName" layoutX="235.0" layoutY="72.0" text="Name:" textAlignment="CENTER" />
-      <Label layoutX="228.0" layoutY="155.0" text="Difficulty:" textAlignment="CENTER" />
-      <TextField fx:id="username" layoutX="178.0" layoutY="102.0" promptText="Giacomo" />
-      <ChoiceBox fx:id="difficulty" layoutX="177.0" layoutY="192.0" prefWidth="150.0" />
-      <Button fx:id="start" layoutX="227.0" layoutY="263.0" mnemonicParsing="false" onAction="#onClickStart" styleClass="btn1" text="play" />
-      <Label fx:id="erroreNome" layoutX="350.0" layoutY="106.0" text="campo obbligatorio" textFill="RED" visible="false" />
+      <Label layoutX="160.0" layoutY="14.0" prefHeight="42.0" prefWidth="184.0" text="1 coin to house" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="24.0" />
+         </font></Label>
+      <Label fx:id="labelName" layoutX="229.0" layoutY="80.0" text="Name:" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font></Label>
+      <Label layoutX="213.0" layoutY="155.0" text="Difficulty:" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font></Label>
+      <TextField fx:id="username" layoutX="174.0" layoutY="111.0" promptText="Giacomo" />
+      <ChoiceBox fx:id="difficulty" layoutX="170.0" layoutY="191.0" prefWidth="150.0">
+         <effect>
+            <DropShadow />
+         </effect></ChoiceBox>
+      <Button fx:id="start" layoutX="208.0" layoutY="252.0" mnemonicParsing="false" onAction="#onClickStart" prefHeight="31.0" prefWidth="69.0" styleClass="btn1" text="play">
+         <font>
+            <Font name="Comic Sans MS Italic" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
